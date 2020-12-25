@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    "use strict"
+
+    // function checkUserNumber(userNumber) {
+    //   if (!Number.isInteger(userNumber) || userNumber < 0 || userNumber > 999 || Number.IsNaN) {
+    //     return console.log('Введите целое число от 0 до 999. ');
+    //   } else {
+    //     const userObject = {};
+
+    //     userObject.units = userNumber % 10;
+    //     userObject.dozens = Math.floor(userNumber / 10) % 10;
+    //     userObject.hundres = Math.floor(userNumber / 100);
+
+    //     return userObject;
+
+    //   }
+    // }
+    // console.log(checkUserNumber(358));
+
+      const basket = {
+        userBasket : [
+      {name: 'Шлем', 
+      price: 15, 
+      coll: 1,
+    }, 
+      {
+      name: 'Перчатки',
+      price: 10, 
+      coll: 3,
+    },
+  ],
+
+  totalPrice() {
+    return this.userBasket.reduce((sum,item) => { 
+      return sum + item.price * item.coll;
+    }, 0);
+  },
+  goodsBasket(){
+    return this.userBasket.length;
+  }
+    };
+    console.log(basket.totalPrice());
+
+  </script>
+</body>
+
+</html>
